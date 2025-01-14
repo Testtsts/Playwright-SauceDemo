@@ -1,5 +1,3 @@
-const { expect } = require('@playwright/test');
-
 exports.InventoryPage = class InventoryPage{
     /**
      * @param {import('@playwright/test').Page} page
@@ -13,6 +11,10 @@ exports.InventoryPage = class InventoryPage{
 
     async clickNthAddToCartButton(index){
         await this.itemAddToCartButton.nth(index).click();
+    }
+
+    async getItemCount(){
+        return await this.itemAddToCartButton.count();
     }
 
 }
