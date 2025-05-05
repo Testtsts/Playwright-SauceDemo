@@ -7,4 +7,3 @@ RUN npm install
 
 RUN npx -y playwright install --with-deps chromium
 
-CMD xvfb-run npx playwright test
