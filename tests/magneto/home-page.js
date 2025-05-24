@@ -16,7 +16,8 @@ exports.HomePage = class HomePage{
     }
 
     async visitPage(){
-        await this.page.goto("https://magento.softwaretestingboard.com/")
+        await this.page.goto("https://magento.softwaretestingboard.com/",{waitUntil:'domcontentloaded'})
+        // await this.page.goto("https://magento.softwaretestingboard.com/")
     }
 
 }

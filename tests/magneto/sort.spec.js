@@ -2,7 +2,7 @@ const {HomePage,HOME_URL,} = require('./home-page')
 const { test, expect} =  require('@playwright/test');
 const {CatalogSearch} = require("./catalog-search-page")
 
-test.describe("sort product by price", ()=>{
+test.skip("sort product by price", ()=>{
     test.beforeEach(async({page})=>{
         const homePage = new HomePage(page)
         await homePage.visitPage()

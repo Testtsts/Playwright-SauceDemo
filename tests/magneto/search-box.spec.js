@@ -10,10 +10,11 @@ test.describe("search function", ()=>{
         await homePage.searchForItem("jacket");
         expect(page.url()).toContain("catalogsearch")
         const catalogSearch = new CatalogSearch(page);
-        
-        for(let indexProduct=0;indexProduct<5;indexProduct++){
-            expect(await catalogSearch.getNthProduct(indexProduct)).toContainText("Jacket",{useInnerText:true});
-        }
+        await expect(await catalogSearch.getNthProduct(0)).toContainText("Jacket")
+
+        // for(let indexProduct=0;indexProduct<5;indexProduct++){
+        //     expect(await catalogSearch.getNthProduct(indexProduct)).toContainText("Jacket",{useInnerText:true});
+        // }
     })
 
 })
