@@ -29,7 +29,7 @@ exports.MenuPage = class MenuPage{
         await this.page.locator(`.menu-category-container > :nth-child(${index})`).click();
     }
 
-    async searchMenuItem(){
+    async searchMenuItem(searchKeyword){
         await this.page.locator('[aria-label="search-button"]').click();
         await this.page.locator('.search-input').fill(searchKeyword);
     }
