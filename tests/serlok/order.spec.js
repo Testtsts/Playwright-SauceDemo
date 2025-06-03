@@ -1,4 +1,4 @@
-const { expect } = require('playwright/test');
+const { test,expect } = require('playwright/test');
 const {MenuPage,ONLINE_ORDER_URL} = require('./menu-page.js')
 
 test.describe('serlok online order menu', ()=>{
@@ -12,9 +12,9 @@ test.describe('serlok online order menu', ()=>{
         await menuPage.addNthItemToCart(0);
         await menuPage.addNthItemToCart(1);
         await menuPage.goToCart();
-        expect(page.url()).toContain('view-order');
+        await expect(page).toHaveURL(/view-order/);
         await menuPage.continuePayment();
-        expect(page.url()).toContain('payment');
+        await expect(page).toHaveURL(/payment/);
         await menuPage.continueAsGuest();
         await expect(menuPage.getTableNum()).toHaveValue('180');
         await expect(menuPage.getPayButton()).toBeVisible();

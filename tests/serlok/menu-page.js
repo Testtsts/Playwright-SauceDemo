@@ -6,7 +6,7 @@ exports.MenuPage = class MenuPage{
         this.page= page;
         this.tableNumInput = page.locator('#table-name-input');
         this.tableNumSubmit = page.locator('#submit-table-button > .mat-mdc-button-touch-target');
-        this.continueAsGuestButton = page.locator('.mat-ripple:contains(Guest)');
+        this.continueAsGuestButton = page.locator('.mat-ripple').filter({'hasText':"Guest"});
     }
 
     async goto(){
