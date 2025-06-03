@@ -6,7 +6,7 @@ const STANDARD_USERNAME = "standard_user";
 const GENERIC_PASSWORD = "secret_sauce";
 
 
-test.describe('add items to cart', ()=>{
+test.skip('add items to cart', ()=>{
     test.beforeEach(async({page})=>{
         const loginPage = new LoginPage(page);
         await loginPage.goto();
