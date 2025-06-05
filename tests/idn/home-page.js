@@ -10,7 +10,7 @@ exports.HomePage = class HomePage{
     }
     async goto(){
         await this.page.goto('https://www.idntimes.com/');
-        await expect(this.page.locator('[data-testid="header-logo-img"]')).toBeVisible()
+        await expect(this.page.locator('[id="nav-logo"]')).toBeVisible()
     }
 
     async clickJoinButton(){
