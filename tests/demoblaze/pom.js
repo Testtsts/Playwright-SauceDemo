@@ -14,7 +14,7 @@ exports.DemoBlazePom = class DemoBlazePom{
     }
 
     async selectItemByName(itemName){
-        return this.page.locator(".card-title").filter({hasText:itemName}).click();
+        return this.page.locator(".hrefch").filter({hasText:itemName}).click();
     }
 
     async addToCart(){
