@@ -23,5 +23,21 @@ test.describe('Home Page Navigation', ()=>{
         await expect(page).toHaveURL(connectSubDomainPattern)
     })
 
+    test('should redirect to selected news page when clicking headline news', async ({page})=>{
+        const homePage = new HomePage(page)
+        await homePage.clickTechMenu();
+        await expect(page).toHaveURL(/tech/);
+        await homePage.clickBusinessMenu();
+        await expect(page).toHaveURL(/business/);
+        await homePage.clickHealthMenu();
+        await expect(page).toHaveURL(/health/);
+    })
+
+    test('should redirect to career page when clicking career sidebar', async ({page})=>{
+        const homePage = new HomePage(page);
+        await homePage.clickCareerSideBar();
+        await expect(page).toHaveURL(/idn.media\/career/)
+    })
+
 
 })
