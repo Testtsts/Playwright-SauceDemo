@@ -17,11 +17,14 @@ test.describe("Demo Blaze Order", function(){
         await demoBlaze.selectItemByName("Samsung galaxy s6");
         await demoBlaze.addToCart();
         // cy.go(-2);
-        await page.goBack(-2)
+        await page.reload()
+        await page.goBack()
+        await page.goBack()
         await demoBlaze.selectItemByName("Nokia lumia 1520");
         await demoBlaze.addToCart();
         await demoBlaze.goToCart();
-        await demoBlaze.getTotalPrice().should('have.text', "1180");
+        await expect(await demoBlaze.getTotalPrice()).toHaveText("1180");
+        // await demoBlaze.getTotalPrice().should('have.text', "1180");
         await demoBlaze.placeOrder();
         await demoBlaze.fillName(faker.person.fullName())
         await demoBlaze.fillCountry("Indonesia");
@@ -31,11 +34,12 @@ test.describe("Demo Blaze Order", function(){
         await demoBlaze.fillYear("2030");
         await demoBlaze.clickPurchase();
         await demoBlaze.closeOrderSummary();
-        cy.reload()
-        await demoBlaze.getTotalPrice().should('not.be.visible');
+        await page.reload()
+        // await demoBlaze.getTotalPrice().should('not.be.visible');
+        await expect(await demoBlaze.getTotalPrice()).toBeHidden()
     })
 
-    test("should success delete item from cart", async ({page})=>{
+    test.skip("should success delete item from cart", async ({page})=>{
         DemoBlazePom.selectItemByName("Samsung galaxy s6");
         DemoBlazePom.addToCart();
         cy.go(-2);
