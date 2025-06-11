@@ -1,5 +1,5 @@
 const {fakerID_ID: faker} = require('@faker-js/faker');
-const {HOMEPAGE_URL,DemoBlazePom} = require("./pom");
+const {HOMEPAGE_URL, DemoBlazePom} = require("./pom");
 const { test, expect} =  require('@playwright/test');
 
 
@@ -12,11 +12,10 @@ test.describe("Demo Blaze Order", function(){
         // cy.url().should("eq",HOMEPAGE_URL)
     })
     
-    test.only("should success order item from cart", async({page})=>{
+    test("should success order item from cart", async({page})=>{
         const demoBlaze = new DemoBlazePom(page)
         await demoBlaze.selectItemByName("Samsung galaxy s6");
         await demoBlaze.addToCart();
-        // cy.go(-2);
         await page.reload()
         await page.goBack()
         await page.goBack()
@@ -24,7 +23,6 @@ test.describe("Demo Blaze Order", function(){
         await demoBlaze.addToCart();
         await demoBlaze.goToCart();
         await expect(await demoBlaze.getTotalPrice()).toHaveText("1180");
-        // await demoBlaze.getTotalPrice().should('have.text', "1180");
         await demoBlaze.placeOrder();
         await demoBlaze.fillName(faker.person.fullName())
         await demoBlaze.fillCountry("Indonesia");
@@ -35,26 +33,31 @@ test.describe("Demo Blaze Order", function(){
         await demoBlaze.clickPurchase();
         await demoBlaze.closeOrderSummary();
         await page.reload()
-        // await demoBlaze.getTotalPrice().should('not.be.visible');
         await expect(await demoBlaze.getTotalPrice()).toBeHidden()
     })
 
-    test.skip("should success delete item from cart", async ({page})=>{
-        DemoBlazePom.selectItemByName("Samsung galaxy s6");
-        DemoBlazePom.addToCart();
-        cy.go(-2);
-        DemoBlazePom.selectItemByName("Sony xperia z5");
-        DemoBlazePom.addToCart();
-        cy.go(-2);
-        DemoBlazePom.selectItemByName("HTC One M9");
-        DemoBlazePom.addToCart();
-        cy.go(-2);
-        DemoBlazePom.selectItemByName("Nexus 6");
-        DemoBlazePom.addToCart();
-        DemoBlazePom.goToCart();
-        DemoBlazePom.getTotalPrice().should('have.text', "2030")
-        // DemoBlazePom.deleteTopItem();
-        DemoBlazePom.removeItemFromCartByName("HTC One M9")
-        DemoBlazePom.getTotalPrice().should('have.text', "1330")
+    test("should success delete item from cart", async ({page})=>{
+        const demoBlaze = new DemoBlazePom(page)
+        await demoBlaze.selectItemByName("Samsung galaxy s6");
+        await demoBlaze.addToCart();
+        await page.reload()
+        await page.goBack()
+        await page.goBack()
+        await demoBlaze.selectItemByName("Sony xperia z5");
+        await demoBlaze.addToCart();
+        await page.reload()
+        await page.goBack()
+        await page.goBack()
+        await demoBlaze.selectItemByName("HTC One M9");
+        await demoBlaze.addToCart();
+        await page.reload()
+        await page.goBack()
+        await page.goBack()
+        await demoBlaze.selectItemByName("Nexus 6");
+        await demoBlaze.addToCart();
+        await demoBlaze.goToCart();
+        await expect(await demoBlaze.getTotalPrice()).toHaveText("2030");
+        await demoBlaze.removeItemFromCartByName("HTC One M9")
+        await expect(await demoBlaze.getTotalPrice()).toHaveText("1330");
     })
 })

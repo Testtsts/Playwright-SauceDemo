@@ -26,7 +26,9 @@ exports.DemoBlazePom = class DemoBlazePom{
     }
 
     async removeItemFromCartByName(itemName){
-        return this.page.locator(".success").filter({hasText:itemName}).locator("..").filter({hasText:"Delete"}).click()
+        return this.page.locator(".success")
+        .filter({hasText: itemName})
+        .getByText("Delete").click();
     }
 
     async getTotalPrice(){
