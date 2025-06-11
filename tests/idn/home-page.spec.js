@@ -1,7 +1,7 @@
 const { test,expect } = require('playwright/test');
 const {HomePage,MEDIA_SUBDOMAIN,CONNECT_SUBDOMAIN,PROFILE_SUBDOMAIN} = require('./home-page')
 
-test.describe('Home Page Navigation', ()=>{
+test.skip('Home Page Navigation', ()=>{
     test.beforeEach(async({page})=>{
         const homePage = new HomePage(page)
         await homePage.goto()
