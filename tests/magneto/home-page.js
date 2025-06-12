@@ -12,7 +12,8 @@ exports.HomePage = class HomePage{
 
     async searchForItem(keyword){
         await this.searchBar.fill(keyword);
-        await this.searchButton.click()
+        await this.searchBar.press("Enter");
+        // await this.searchButton.click()
     }
 
     async visitPage(){
