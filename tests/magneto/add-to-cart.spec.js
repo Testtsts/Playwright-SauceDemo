@@ -16,7 +16,6 @@ test('should succeed adding item to cart with selected size and color', async ({
   await (await catalogSearch.getNthProduct(0)).click();
   await(await (await (productDetail.getColorOption())).first()).click();
   await(await (await (productDetail.getSizeOption())).first()).click();
-//   await productDetail.getSizeOption().first().click();
   await productDetail.fillQtyField(5);
   await productDetail.clickAddToCartButton();
   await expect(await globalElements.getCartCounter()).toHaveText('5');
