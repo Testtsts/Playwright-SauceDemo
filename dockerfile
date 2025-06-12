@@ -5,5 +5,5 @@ COPY . ./
 
 RUN npm install
 
-RUN npx -y playwright install --with-deps chromium
+RUN npx -y playwright install --with-deps chrome
 
