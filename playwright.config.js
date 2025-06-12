@@ -65,7 +65,22 @@ module.exports = defineConfig({
     // },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: { 
+        ...devices['Desktop Chrome'], 
+        channel: 'chrome' ,
+        launchOptions: {
+          args: [
+            '--disable-popup-blocking',
+            '--no-sandbox',
+            '--disable-infobars',
+            '--disable-notifications',
+            '--disable-gpu',
+            '--window-size=1440,735',
+            '--guest',
+            '--disable-dev-shm-usage'
+          ]
+        }
+      },
     },
   ],
 
