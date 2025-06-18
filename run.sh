@@ -14,7 +14,7 @@ docker run --mount type=bind,src="$(pwd)/playwright.config.js",dst=/app/playwrig
 
 
 # Print column headers
-echo "Time (s),CPU_Usage,Memory_Usage,Memory_Percent,Net_IO,Block_IO,PIDs" > "$OUTPUT_FILE" 
+echo "Time (s),Container_Name,Container_ID,CPU_Usage,Memory_Usage,Memory_Percent,Net_IO,Block_IO,PIDs" > "$OUTPUT_FILE" 
 
 # Start monitoring loop
 # while docker inspect --format '{{.State.Running}}' "$CONTAINER_NAME" &>/dev/null; do
