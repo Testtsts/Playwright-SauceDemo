@@ -16,11 +16,11 @@ test.describe("Demo Blaze Order", function(){
         const demoBlaze = new DemoBlazePom(page)
         await demoBlaze.selectItemByName("Samsung galaxy s6");
         await demoBlaze.addToCart();
-        await demoBlaze.clickHomeButton();
-        await demoBlaze.selectItemByName("Nokia lumia 1520");
-        await demoBlaze.addToCart();
+        // await demoBlaze.clickHomeButton();
+        // await demoBlaze.selectItemByName("Nokia lumia 1520");
+        // await demoBlaze.addToCart();
         await demoBlaze.goToCart();
-        await expect(await demoBlaze.getTotalPrice()).toHaveText("1180");
+        await expect(await demoBlaze.getTotalPrice()).toHaveText("360");
         await demoBlaze.placeOrder();
         await demoBlaze.fillName(faker.person.fullName())
         await demoBlaze.fillCountry("Indonesia");
@@ -30,7 +30,8 @@ test.describe("Demo Blaze Order", function(){
         await demoBlaze.fillYear("2030");
         await demoBlaze.clickPurchase();
         await demoBlaze.closeOrderSummary();
-        // await demoBlaze.goToCart();
+        await demoBlaze.visit();
+        await demoBlaze.goToCart();
         await expect(await demoBlaze.getTotalPrice()).toHaveText('');
     })
 
@@ -41,15 +42,15 @@ test.describe("Demo Blaze Order", function(){
         await demoBlaze.clickHomeButton();
         await demoBlaze.selectItemByName("Sony xperia z5");
         await demoBlaze.addToCart();
-        await demoBlaze.clickHomeButton();
-        await demoBlaze.selectItemByName("HTC One M9");
-        await demoBlaze.addToCart();
-        await demoBlaze.clickHomeButton();
-        await demoBlaze.selectItemByName("Nexus 6");
-        await demoBlaze.addToCart();
+        // await demoBlaze.clickHomeButton();
+        // await demoBlaze.selectItemByName("HTC One M9");
+        // await demoBlaze.addToCart();
+        // await demoBlaze.clickHomeButton();
+        // await demoBlaze.selectItemByName("Nexus 6");
+        // await demoBlaze.addToCart();
         await demoBlaze.goToCart();
-        await expect(await demoBlaze.getTotalPrice()).toHaveText("2030");
-        await demoBlaze.removeItemFromCartByName("HTC One M9")
-        await expect(await demoBlaze.getTotalPrice()).toHaveText("1330");
+        await expect(await demoBlaze.getTotalPrice()).toHaveText("680");
+        await demoBlaze.removeItemFromCartByName("Samsung galaxy s6")
+        await expect(await demoBlaze.getTotalPrice()).toHaveText("320");
     })
 })
