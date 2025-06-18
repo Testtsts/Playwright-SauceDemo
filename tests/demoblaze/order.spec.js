@@ -30,8 +30,8 @@ test.describe("Demo Blaze Order", function(){
         await demoBlaze.fillYear("2030");
         await demoBlaze.clickPurchase();
         await demoBlaze.closeOrderSummary();
-        await page.reload()
-        await expect(await demoBlaze.getTotalPrice()).toBeHidden()
+        // await demoBlaze.goToCart();
+        await expect(await demoBlaze.getTotalPrice()).toHaveText('');
     })
 
     test("should success delete item from cart", async ({page})=>{
