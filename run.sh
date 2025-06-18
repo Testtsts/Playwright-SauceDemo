@@ -1,8 +1,8 @@
 #!/bin/bash
 
-CONTAINER_NAME="playwright-test-container${3}"
+CONTAINER_NAME="playwright-test-container${2}"
 IMAGE_NAME="${1}"
-OUTPUT_FILE="playwright-resource-usage.txt${3}"
+OUTPUT_FILE="playwright-resource-usage.txt${2}"
 
 # Start the container
 # docker run --name "$CONTAINER_NAME" \
