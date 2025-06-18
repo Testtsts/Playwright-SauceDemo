@@ -2,7 +2,7 @@
 
 CONTAINER_NAME="playwright-test-container${2}"
 IMAGE_NAME="${1}"
-OUTPUT_FILE="playwright-resource-usage.txt${2}"
+OUTPUT_FILE="playwright-resource-usage${2}.txt"
 
 # Start the container
 # docker run --name "$CONTAINER_NAME" \
