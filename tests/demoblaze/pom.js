@@ -70,6 +70,10 @@ exports.DemoBlazePom = class DemoBlazePom{
     async closeOrderSummary(){
         return this.page.locator(".confirm.btn.btn-lg.btn-primary").click();
     }
+
+    async clickHomeButton(){
+        return this.page.locator("#nava").click();
+    }
     
 }
 

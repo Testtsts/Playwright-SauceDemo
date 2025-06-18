@@ -16,9 +16,7 @@ test.describe("Demo Blaze Order", function(){
         const demoBlaze = new DemoBlazePom(page)
         await demoBlaze.selectItemByName("Samsung galaxy s6");
         await demoBlaze.addToCart();
-        await page.reload()
-        await page.goBack()
-        await page.goBack()
+        await demoBlaze.clickHomeButton();
         await demoBlaze.selectItemByName("Nokia lumia 1520");
         await demoBlaze.addToCart();
         await demoBlaze.goToCart();
@@ -40,19 +38,13 @@ test.describe("Demo Blaze Order", function(){
         const demoBlaze = new DemoBlazePom(page)
         await demoBlaze.selectItemByName("Samsung galaxy s6");
         await demoBlaze.addToCart();
-        await page.reload()
-        await page.goBack()
-        await page.goBack()
+        await demoBlaze.clickHomeButton();
         await demoBlaze.selectItemByName("Sony xperia z5");
         await demoBlaze.addToCart();
-        await page.reload()
-        await page.goBack()
-        await page.goBack()
+        await demoBlaze.clickHomeButton();
         await demoBlaze.selectItemByName("HTC One M9");
         await demoBlaze.addToCart();
-        await page.reload()
-        await page.goBack()
-        await page.goBack()
+        await demoBlaze.clickHomeButton();
         await demoBlaze.selectItemByName("Nexus 6");
         await demoBlaze.addToCart();
         await demoBlaze.goToCart();
