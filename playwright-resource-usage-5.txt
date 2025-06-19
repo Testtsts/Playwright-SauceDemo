@@ -1,0 +1,9 @@
+Time (s),Container_Name,Container_ID,CPU_Usage,Memory_Usage,Memory_Percent,Net_IO,Block_IO,PIDs
+1,playwright-test-container-5,899e23845153,114.62%,114.4MiB / 7.684GiB,1.45%,952B / 126B,0B / 0B,20
+3,playwright-test-container-5,899e23845153,478.81%,495.2MiB / 7.684GiB,6.29%,1.17kB / 126B,0B / 12.3kB,82
+5,playwright-test-container-5,899e23845153,357.89%,954.4MiB / 7.684GiB,12.13%,2.17MB / 137kB,0B / 8.84MB,461
+8,playwright-test-container-5,899e23845153,609.56%,1.1GiB / 7.684GiB,14.31%,8.22MB / 460kB,28.7kB / 8.84MB,505
+10,playwright-test-container-5,899e23845153,468.91%,1.196GiB / 7.684GiB,15.57%,9.9MB / 774kB,36.9kB / 8.94MB,496
+13,playwright-test-container-5,899e23845153,372.48%,1018MiB / 7.684GiB,12.93%,12MB / 891kB,45.1kB / 9.94MB,383
+16,playwright-test-container-5,899e23845153,238.81%,542.6MiB / 7.684GiB,6.90%,13.5MB / 1.1MB,45.1kB / 10.5MB,169
+19,playwright-test-container-5,899e23845153,189.01%,536.2MiB / 7.684GiB,6.81%,14.3MB / 1.2MB,53.2kB / 10.5MB,169

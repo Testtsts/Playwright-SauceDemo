@@ -1,0 +1,9 @@
+Time (s),Container_Name,Container_ID,CPU_Usage,Memory_Usage,Memory_Percent,Net_IO,Block_IO,PIDs
+0,playwright-test-container-3,01cf4707570a,111.60%,121MiB / 7.684GiB,1.54%,910B / 84B,0B / 0B,20
+2,playwright-test-container-3,01cf4707570a,631.11%,649.2MiB / 7.684GiB,8.25%,1.83kB / 756B,4.1kB / 573kB,230
+6,playwright-test-container-3,01cf4707570a,633.08%,1.057GiB / 7.684GiB,13.76%,5.32MB / 344kB,20.5kB / 8.84MB,504
+9,playwright-test-container-3,01cf4707570a,728.62%,1.146GiB / 7.684GiB,14.91%,9.15MB / 628kB,36.9kB / 8.93MB,492
+12,playwright-test-container-3,01cf4707570a,359.67%,1.166GiB / 7.684GiB,15.18%,10.9MB / 807kB,45.1kB / 9.22MB,472
+15,playwright-test-container-3,01cf4707570a,232.52%,494MiB / 7.684GiB,6.28%,12.9MB / 978kB,45.1kB / 10.2MB,168
+18,playwright-test-container-3,01cf4707570a,173.87%,510.4MiB / 7.684GiB,6.49%,13.4MB / 1.03MB,49.2kB / 10.2MB,168
+20 ERROR timeout or no output
