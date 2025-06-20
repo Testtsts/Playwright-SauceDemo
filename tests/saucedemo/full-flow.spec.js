@@ -49,7 +49,7 @@ test("full flow",async ({page})=>{
     await checkoutStepOne.clickContinueButton();
     expect(page.url()).toEqual(CHECKOUT_TWO_URL);
     const checkoutStepTwo = new CheckoutStepTwo(page);
-    expect(await checkoutStepTwo.inventoryItem.count()).toEqual(1);
+    await expect(inventoryPage.shoppingCartBadge).toContainText("1");
     //Click finish button
     await checkoutStepTwo.clickFinishButton();
     expect(page.url()).toEqual(CHECKOUT_COMPLETE_URL);
